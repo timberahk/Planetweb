@@ -14,8 +14,8 @@ const Hero: React.FC = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold text-planet-black leading-[1.1] tracking-tight">
-              額頭、面頰長痘？<br/>
-              未必係護膚品出錯。
+              額頭粒粒、面頰爆瘡？<br/>
+              兇手可能係洗頭水。
             </h1>
             
             <p className="text-lg text-gray-600 leading-relaxed max-w-lg">

@@ -56,7 +56,7 @@ const RealResults: React.FC = () => {
             </div>
           </div>
 
-          {/* Result 2: Hairline */}
+          {/* Result 2: Hairline & Forehead */}
           <div className="group">
              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-all duration-300">
               <div className="flex gap-4 mb-6">
@@ -84,9 +84,9 @@ const RealResults: React.FC = () => {
                   <Calendar size={14} />
                   <span>4 Weeks Protocol</span>
                 </div>
-                <h3 className="font-bold text-xl text-planet-black">髮際線減少紅腫</h3>
+                <h3 className="font-bold text-xl text-planet-black">額頭粒粒消失，髮際線平滑</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  「一直以為係卸妝唔乾淨，後來先知原來係護髮素塞住毛孔。NE: SMOOTH 夠潤但完全唔會焗住皮膚。」
+                  「一直以為額頭生暗瘡係因為卸妝唔乾淨，後來先知原來係護髮素塞住毛孔。NE: SMOOTH 夠潤但完全唔會焗住面部皮膚。」
                 </p>
                  <div className="flex items-center gap-2 text-xs text-green-600 font-bold mt-2">
                   <CheckCircle2 size={12} />

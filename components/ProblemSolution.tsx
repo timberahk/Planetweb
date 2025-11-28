@@ -24,16 +24,16 @@ const ProblemSolution: React.FC = () => {
              </div>
              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                <XCircle className="text-red-500" />
-               洗頭水的流動路徑 (The Runoff)
+               洗頭水的流動路徑 (Runoff Path)
              </h3>
              
              <div className="space-y-6 relative z-10">
                <div className="flex gap-4 items-start">
                  <div className="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0">1</div>
                  <div>
-                   <h4 className="font-bold text-gray-900">必經之路：額頭與面頰</h4>
+                   <h4 className="font-bold text-gray-900">第一受災區：額頭與太陽穴</h4>
                    <p className="text-sm text-gray-500 mt-1">
-                     沖水時，泡沫首先流經<strong>額頭、太陽穴、臉頰兩側</strong>，最後才是下巴與背部。市面產品為了「順滑」，添加了大量高附著性的油分與聚合物。
+                     沖水時，泡沫首先順著髮際線流經<strong>額頭、太陽穴、臉頰兩側</strong>。這是很多人「無故起粒粒」的盲點。
                    </p>
                  </div>
                </div>
@@ -41,9 +41,9 @@ const ProblemSolution: React.FC = () => {
                <div className="flex gap-4 items-start">
                  <div className="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0">2</div>
                  <div>
-                   <h4 className="font-bold text-gray-900">即使沖水亦難以洗淨</h4>
+                   <h4 className="font-bold text-gray-900">難以察覺的殘留膜</h4>
                    <p className="text-sm text-gray-500 mt-1">
-                     這些成分的設計原意是「吸附在頭髮上」，所以極難被水沖走。結果，它們在你面部皮膚上形成了一層不透氣的「致痘薄膜」。
+                     市面洗頭水為了「順滑」，添加了高附著性的油分與聚合物。它們會像保鮮紙一樣，緊緊吸附在你的臉頰與下巴邊緣，極難沖走。
                    </p>
                  </div>
                </div>
@@ -51,9 +51,9 @@ const ProblemSolution: React.FC = () => {
                <div className="flex gap-4 items-start">
                  <div className="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0">3</div>
                  <div>
-                   <h4 className="font-bold text-gray-900">長期積聚成「粒粒」</h4>
+                   <h4 className="font-bold text-gray-900">毛孔長期窒息</h4>
                    <p className="text-sm text-gray-500 mt-1">
-                     即使你皮膚本身不錯，長期被這些油脂封鎖毛孔，也會長出閉口粉刺 (粒粒)。瘋狂做 Facial 或換護膚品都難以改善，因為源頭(洗頭水)從未改變。
+                     這層看不見的薄膜會封鎖毛孔。即使你之後用洗面奶，也未必能完全洗淨這些專為頭髮設計的成分，導致閉口粉刺反覆生長。
                    </p>
                  </div>
                </div>
@@ -71,22 +71,22 @@ const ProblemSolution: React.FC = () => {
               <li className="flex gap-4">
                 <CheckCircle2 className="text-green-400 shrink-0" size={24} />
                 <div>
-                  <h4 className="font-bold text-sm mb-1">零殘留配方</h4>
-                  <p className="text-gray-400 text-sm">我們選用小分子、水溶性的保濕成分。即使流經額頭、面部與背部，也能隨水完全沖走，絕不堵塞毛孔。</p>
+                  <h4 className="font-bold text-sm mb-1">親水性零殘留配方</h4>
+                  <p className="text-gray-400 text-sm">我們選用小分子、水溶性的保濕成分。泡沫流經額頭與面部時，能隨水完全沖走，還原毛孔呼吸。</p>
                 </div>
               </li>
               <li className="flex gap-4">
                 <CheckCircle2 className="text-green-400 shrink-0" size={24} />
                 <div>
                   <h4 className="font-bold text-sm mb-1">香港工作室調配</h4>
-                  <p className="text-gray-400 text-sm">針對香港濕熱氣候調整配方。我們不盲從歐美產品的「重油」標準，參照文獻，只給頭髮需要的，不給皮膚負擔。</p>
+                  <p className="text-gray-400 text-sm">針對香港濕熱氣候調整配方。我們不盲從歐美產品的「重油」標準，只給頭髮需要的，不給面部皮膚負擔。</p>
                 </div>
               </li>
               <li className="flex gap-4">
                 <CheckCircle2 className="text-green-400 shrink-0" size={24} />
                 <div>
                   <h4 className="font-bold text-sm mb-1">護膚級的洗護體驗</h4>
-                  <p className="text-gray-400 text-sm">把洗頭水當成護膚品來做。剔除了所有可能導致面部敏感或起粒粒的成分，從此告別「假性暗瘡」。</p>
+                  <p className="text-gray-400 text-sm">從此告別髮際線粉刺與假性暗瘡。這不只是洗頭，而是每天兩次的頭皮與面部護理。</p>
                 </div>
               </li>
             </ul>
