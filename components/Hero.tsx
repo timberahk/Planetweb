@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
                 改善反覆困擾
               </div>
               <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
-              <div>> 針對面部/髮際/背部</div>
+              <div>&gt; 針對面部/髮際/背部</div>
             </div>
           </div>
 
