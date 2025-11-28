@@ -1,6 +1,7 @@
 import React from 'react';
 import { Product } from '../types';
 import { Plus } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const products: Product[] = [
   {
@@ -33,6 +34,8 @@ const products: Product[] = [
 ];
 
 const Products: React.FC = () => {
+  const { addToCart } = useCart();
+
   return (
     <section id="products" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +74,11 @@ const Products: React.FC = () => {
 
               <div className="flex items-center justify-between pt-6 border-t border-gray-100">
                 <span className="text-lg font-medium">{product.price}</span>
-                <button className="w-10 h-10 rounded-full bg-gray-100 hover:bg-black hover:text-white flex items-center justify-center transition-colors">
+                <button 
+                  onClick={() => addToCart(product)}
+                  className="w-10 h-10 rounded-full bg-gray-100 hover:bg-black hover:text-white flex items-center justify-center transition-colors shadow-sm"
+                  aria-label="Add to cart"
+                >
                   <Plus size={20} />
                 </button>
               </div>
