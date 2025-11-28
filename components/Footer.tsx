@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-16 pt-8 border-t border-gray-800 text-center md:text-left flex flex-col md:flex-col lg:flex-row justify-between items-start lg:items-center text-xs text-gray-600 gap-4">
           <p>
-            &copy; {new Date().getFullYear()} NE: PLANET Studio. All rights reserved. Crafted in HK.
+            &copy; {new Date().getFullYear()} NE: PLANET. All rights reserved. Crafted in HK.
             <br className="md:hidden"/>
             <span className="mt-2 block md:inline md:mt-0 text-[10px] text-gray-700">本網站資訊僅供參考，不旨在診斷、治療或預防任何疾病。如有皮膚病變請諮詢醫生意見。</span>
           </p>

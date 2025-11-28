@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
                 {/* Bottle 1: Conditioner */}
                 <div className="w-20 md:w-28 aspect-[1/2.4] bg-[#F9F9F9] rounded-t-full rounded-b-xl shadow-xl relative flex flex-col items-center justify-end pb-8 border border-white/50">
                    <div className="absolute -top-3 w-5 h-6 bg-planet-black/90 rounded-sm"></div>
-                  <div className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] rotate-90 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-200 whitespace-nowrap">NE: STUDIO</div>
+                  <div className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] rotate-90 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-200 whitespace-nowrap">NE: PLANET</div>
                   <div className="text-[7px] md:text-[9px] font-bold tracking-widest mb-1 text-gray-800">SMOOTH</div>
                 </div>
 
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
                 {/* Bottle 3: Essence */}
                 <div className="w-16 md:w-24 aspect-[1/2.4] bg-[#F9F9F9] rounded-t-full rounded-b-xl shadow-xl relative flex flex-col items-center justify-end pb-8 border border-white/50">
                    <div className="absolute -top-3 w-5 h-6 bg-planet-black/90 rounded-sm"></div>
-                  <div className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] rotate-90 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-200 whitespace-nowrap">NE: STUDIO</div>
+                  <div className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] rotate-90 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-200 whitespace-nowrap">NE: PLANET</div>
                   <div className="text-[7px] md:text-[9px] font-bold tracking-widest mb-1 text-gray-800">ESSENCE</div>
                 </div>
 
