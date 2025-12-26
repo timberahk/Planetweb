@@ -47,6 +47,11 @@
 <link rel="stylesheet" href="/index.css">
 </head>
   <body>
+    <!-- Netlify Forms 隱藏表單定義 (SPA 必要) -->
+    <form name="newsletter" data-netlify="true" netlify hidden>
+      <input type="email" name="email" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
   <script type="module" src="/index.tsx"></script>

@@ -44,10 +44,31 @@ const Footer: React.FC = () => {
           <div>
              <h4 className="font-bold mb-6 text-xs uppercase tracking-wider text-gray-500">Stay Updated</h4>
              <p className="text-gray-400 text-sm mb-4">訂閱以獲取新品發布通知。</p>
-             <div className="flex border-b border-gray-700 pb-2">
-               <input type="email" placeholder="Email Address" className="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600 outline-none text-sm" />
-               <button className="text-gray-400 hover:text-white uppercase text-xs font-bold">Join</button>
-             </div>
+             
+             {/* Netlify Form 實作 */}
+             <form 
+               name="newsletter" 
+               method="POST" 
+               data-netlify="true" 
+               className="flex border-b border-gray-700 pb-2"
+             >
+               {/* React SPA 在 Netlify 必須包含這個隱藏欄位 */}
+               <input type="hidden" name="form-name" value="newsletter" />
+               
+               <input 
+                 type="email" 
+                 name="email" 
+                 required 
+                 placeholder="Email Address" 
+                 className="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600 outline-none text-sm" 
+               />
+               <button 
+                 type="submit" 
+                 className="text-gray-400 hover:text-white uppercase text-xs font-bold"
+               >
+                 Join
+               </button>
+             </form>
           </div>
 
         </div>
