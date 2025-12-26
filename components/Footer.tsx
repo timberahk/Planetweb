@@ -1,6 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Check } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      // Netlify 必須收到這個 form-name 才能識別表單
+      formData.append('form-name', 'newsletter');
+
+      const response = await fetch('/', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      console.error('Netlify Form Error:', error);
+      setStatus('error');
+      // 3秒後重置錯誤狀態，讓用戶重試
+      setTimeout(() => setStatus('idle'), 3000);
+    }
+  };
+
   return (
     <footer className="bg-planet-black text-white py-16 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,30 +77,39 @@ const Footer: React.FC = () => {
              <h4 className="font-bold mb-6 text-xs uppercase tracking-wider text-gray-500">Stay Updated</h4>
              <p className="text-gray-400 text-sm mb-4">訂閱以獲取新品發布通知。</p>
              
-             {/* Netlify Form 實作 */}
-             <form 
-               name="newsletter" 
-               method="POST" 
-               data-netlify="true" 
-               className="flex border-b border-gray-700 pb-2"
-             >
-               {/* React SPA 在 Netlify 必須包含這個隱藏欄位 */}
-               <input type="hidden" name="form-name" value="newsletter" />
-               
-               <input 
-                 type="email" 
-                 name="email" 
-                 required 
-                 placeholder="Email Address" 
-                 className="bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600 outline-none text-sm" 
-               />
-               <button 
-                 type="submit" 
-                 className="text-gray-400 hover:text-white uppercase text-xs font-bold"
+             {status === 'success' ? (
+               <div className="flex items-center gap-2 text-green-400 bg-green-400/10 p-3 rounded-lg animate-in fade-in zoom-in duration-300">
+                 <Check size={18} />
+                 <span className="text-sm font-bold">已成功訂閱，謝謝！</span>
+               </div>
+             ) : (
+               <form 
+                 name="newsletter" 
+                 method="POST" 
+                 data-netlify="true" 
+                 onSubmit={handleSubmit}
+                 className="flex border-b border-gray-700 pb-2 relative"
                >
-                 Join
-               </button>
-             </form>
+                 <input type="hidden" name="form-name" value="newsletter" />
+                 
+                 <input 
+                   type="email" 
+                   name="email" 
+                   required 
+                   value={email}
+                   onChange={(e) => setEmail(e.target.value)}
+                   placeholder={status === 'error' ? '提交失敗，請重試' : 'Email Address'} 
+                   className={`bg-transparent border-none focus:ring-0 text-white w-full placeholder-gray-600 outline-none text-sm transition-colors ${status === 'error' ? 'text-red-400' : ''}`} 
+                 />
+                 <button 
+                   type="submit" 
+                   disabled={status === 'submitting'}
+                   className={`text-gray-400 hover:text-white uppercase text-xs font-bold transition-all ${status === 'submitting' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                 >
+                   {status === 'submitting' ? '...' : 'Join'}
+                 </button>
+               </form>
+             )}
           </div>
 
         </div>
