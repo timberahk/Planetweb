@@ -9,27 +9,27 @@ const products: Product[] = [
     name: 'NE: WASH',
     subtitle: 'Purifying Shampoo',
     description: '溫和清潔，不含 SLS/SLES。泡沫細緻，能有效帶走油脂而不破壞頭皮屏障。',
-    price: 'HK$ 188',
+    price: 'HK$ 150',
     volume: '500ml',
-    features: ['0% 致痘成分', 'pH 5.5 弱酸性', '適合敏感頭皮']
+    features: ['0% 致痘成分', '100% 無油無香', 'pH 5.5 弱酸性']
   },
   {
     id: 'smooth',
     name: 'NE: SMOOTH',
     subtitle: 'Lightweight Conditioner',
     description: '革命性無油配方。提供足夠的順滑度，卻不會在背部或面部殘留致痘薄膜。',
-    price: 'HK$ 198',
+    price: 'HK$ 150',
     volume: '500ml',
-    features: ['不含礦物油', '清爽不假滑', '易沖洗配方']
+    features: ['不含礦物油/植物油', '無香料配方', '易沖洗不殘留']
   },
   {
     id: 'essence',
     name: 'NE: ESSENCE',
     subtitle: 'Hair Repair Lotion',
     description: '免沖洗修護。針對髮尾乾燥，瞬間吸收。即使觸碰到臉頰也不會引發粉刺。',
-    price: 'HK$ 228',
-    volume: '150ml',
-    features: ['修復毛躁', '無矽靈感', '面部肌膚友善']
+    price: 'HK$ 90',
+    volume: '200ml',
+    features: ['修復毛躁', '完全水基配方', '零油零香']
   }
 ];
 

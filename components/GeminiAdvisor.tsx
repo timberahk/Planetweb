@@ -73,23 +73,22 @@ const GeminiAdvisor: React.FC = () => {
                   <p className="text-gray-500 text-sm">正在分析化學結構...</p>
                 </div>
               ) : (
-                <div className="prose prose-sm max-w-none">
-                  <div className="flex items-center gap-3 mb-4">
+                <div className="max-w-none">
+                  <div className="flex items-center gap-3 mb-6">
                     <h3 className="text-lg font-bold m-0">分析結果</h3>
                     <span className="text-xs text-gray-400 uppercase tracking-wider">Analysis Result</span>
                   </div>
                   
-                  <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm whitespace-pre-wrap leading-relaxed text-gray-800">
-                    {result}
-                  </div>
+                  {/* Render the HTML returned by Gemini */}
+                  <div 
+                    className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-gray-800"
+                    dangerouslySetInnerHTML={{ __html: result || '' }}
+                  />
 
-                  <div className="mt-6 p-4 bg-planet-black text-white rounded-lg text-xs md:text-sm flex flex-col md:flex-row gap-4 items-center justify-between">
-                    <p className="text-center md:text-left">
-                      <span className="font-bold block mb-1 text-green-400">NE: PLANET 的不同之處</span> 
-                      我們的產品 100% 剔除以上提及的風險成分。如果你想改善暗瘡問題，請先從更換這些日用品開始。
-                    </p>
-                    <a href="#products" className="shrink-0 bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-gray-200 transition-colors">
-                      查看安全產品
+                  <div className="mt-6 flex justify-end">
+                    <a href="#products" className="inline-flex items-center gap-2 text-xs font-bold text-black border-b border-black pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
+                      查看 NE: PLANET 安全產品
+                      <span className="text-lg">→</span>
                     </a>
                   </div>
                 </div>
