@@ -2,53 +2,54 @@ import React from 'react';
 import { Product } from '../types';
 import { Plus } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-
-const products: Product[] = [
-  {
-    id: 'wash',
-    name: 'NE: WASH',
-    subtitle: 'Purifying Shampoo',
-    description: '溫和清潔，不含 SLS/SLES。泡沫細緻，能有效帶走油脂而不破壞頭皮屏障。',
-    price: 'HK$ 150',
-    volume: '500ml',
-    features: ['0% 致痘成分', '100% 無油無香', 'pH 5.5 弱酸性']
-  },
-  {
-    id: 'smooth',
-    name: 'NE: SMOOTH',
-    subtitle: 'Lightweight Conditioner',
-    description: '革命性無油配方。提供足夠的順滑度，卻不會在背部或面部殘留致痘薄膜。',
-    price: 'HK$ 150',
-    volume: '500ml',
-    features: ['不含礦物油/植物油', '無香料配方', '易沖洗不殘留']
-  },
-  {
-    id: 'essence',
-    name: 'NE: ESSENCE',
-    subtitle: 'Hair Repair Lotion',
-    description: '免沖洗修護。針對髮尾乾燥，瞬間吸收。即使觸碰到臉頰也不會引發粉刺。',
-    price: 'HK$ 90',
-    volume: '200ml',
-    features: ['修復毛躁', '完全水基配方', '零油零香']
-  }
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const Products: React.FC = () => {
   const { addToCart } = useCart();
+  const { t } = useLanguage();
+
+  const products: Product[] = [
+    {
+      id: 'wash',
+      name: 'NE: WASH',
+      subtitle: 'Purifying Shampoo',
+      description: t('prod_wash_desc'),
+      price: 'HK$ 150',
+      volume: '500ml',
+      features: t('prod_wash_feat')
+    },
+    {
+      id: 'smooth',
+      name: 'NE: SMOOTH',
+      subtitle: 'Lightweight Conditioner',
+      description: t('prod_smooth_desc'),
+      price: 'HK$ 150',
+      volume: '500ml',
+      features: t('prod_smooth_feat')
+    },
+    {
+      id: 'essence',
+      name: 'NE: ESSENCE',
+      subtitle: 'Hair Repair Lotion',
+      description: t('prod_essence_desc'),
+      price: 'HK$ 90',
+      volume: '200ml',
+      features: t('prod_essence_feat')
+    }
+  ];
 
   return (
     <section id="products" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
-          <h2 className="text-3xl font-bold tracking-tight">全系列產品</h2>
-          <p className="mt-4 text-gray-500">The Collection</p>
+          <h2 className="text-3xl font-bold tracking-tight">{t('prod_title')}</h2>
+          <p className="mt-4 text-gray-400 text-xs uppercase tracking-widest">{t('prod_subtitle')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((product) => (
             <div key={product.id} className="group bg-white rounded-none p-8 hover:shadow-xl transition-shadow duration-300 border border-transparent hover:border-gray-100 flex flex-col h-full">
               <div className="h-64 bg-gray-100 mb-8 flex items-center justify-center relative overflow-hidden">
-                {/* Abstract Bottle Representation */}
                 <div className="w-24 h-48 bg-white shadow-sm rounded-t-full rounded-b-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
                    <span className="rotate-90 text-[10px] font-bold tracking-[0.2em] text-gray-300">PLANET</span>
                 </div>
