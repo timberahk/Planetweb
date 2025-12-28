@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
-import { Menu, X, ShoppingBag, Beaker, BookOpen, Globe } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import { Menu, X, Beaker, BookOpen, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface NavbarProps {
@@ -11,7 +9,6 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { toggleCart, cartCount } = useCart();
   const { language, setLanguage, t } = useLanguage();
 
   const handleNav = (page: 'home' | 'education', id?: string) => {
@@ -54,26 +51,12 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
               {t('nav_advisor')}
             </button>
 
-            {/* Language Toggle */}
             <button 
               onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
-              className="flex items-center gap-1 text-[10px] font-bold border border-gray-200 px-2 py-1 rounded hover:bg-gray-50 transition-colors uppercase tracking-widest"
+              className="flex items-center gap-1 text-[10px] font-bold border border-gray-200 px-3 py-1.5 rounded hover:bg-gray-50 transition-colors uppercase tracking-widest"
             >
               <Globe size={12} />
               {language === 'zh' ? 'EN' : 'ZH'}
-            </button>
-
-            <button 
-              onClick={toggleCart}
-              className="bg-planet-black text-white px-5 py-2 rounded-full text-sm hover:bg-blue-600 transition-all flex items-center gap-2 relative"
-            >
-              <ShoppingBag size={16} />
-              CART
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
-                  {cartCount}
-                </span>
-              )}
             </button>
           </div>
 
@@ -84,14 +67,6 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
              >
                {language === 'zh' ? 'EN' : 'ZH'}
              </button>
-             <button onClick={toggleCart} className="bg-planet-black text-white px-4 py-1.5 rounded-full text-xs font-medium relative">
-              CART
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-3 h-3 rounded-full flex items-center justify-center font-bold">
-                  {cartCount}
-                </span>
-              )}
-            </button>
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-500 hover:text-black">
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -99,7 +74,6 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-white border-b border-gray-100 absolute w-full h-screen top-16 left-0 z-40">
           <div className="px-6 pt-8 pb-3 space-y-8 flex flex-col text-left">

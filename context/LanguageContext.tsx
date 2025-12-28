@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'zh' | 'en';
@@ -23,7 +24,6 @@ const translations: Record<Language, Record<string, any>> = {
     nav_education: "皮膚百科",
     nav_products: "洗護系列",
     nav_advisor: "成分檢測",
-    nav_cart: "購物車",
     
     // Hero
     hero_badge: "香港工作室研製 · 參照皮膚科文獻標準",
@@ -32,6 +32,21 @@ const translations: Record<Language, Record<string, any>> = {
     hero_cta: "更換您的洗護產品",
     hero_focus: "專注皮膚健康",
     hero_areas: "面部 · 髮際線 · 背部",
+
+    // Products
+    prod_title: "洗護系列",
+    prod_subtitle: "The Collection",
+    prod_featured_bundle: "精選全效套裝",
+    prod_bundle_name: "NE: PLANET 完整皮膚管理套裝",
+    prod_bundle_desc: "包含洗髮水、護髮素及修護髮油。全方位剔除致痘源，重啟肌膚健康。這是針對易長痘肌膚的最完整解決方案。",
+    prod_buy_now: "立即購買",
+    prod_bundle_price: "HK$ 370",
+    prod_wash_desc: "溫和清潔，不含 SLS/SLES。泡沫細緻，有效帶走油脂而不破壞頭皮屏障。",
+    prod_wash_feat: ["0% 致痘成分", "100% 無油無味", "pH 5.5 弱酸性"],
+    prod_smooth_desc: "革命性無油配方。提供充足順滑度，卻不會在背部或面部殘留致痘薄膜。",
+    prod_smooth_feat: ["不含礦物油/植物油", "無香料配方", "易沖洗不殘留"],
+    prod_essence_desc: "免沖洗修護。針對髮尾乾燥，瞬間吸收。即使觸碰到臉頰也不會引發粉刺。",
+    prod_essence_feat: ["修復毛躁", "完全水基配方", "零油零香"],
 
     // Problem & Solution
     prob_badge: "隱形致痘源",
@@ -61,16 +76,6 @@ const translations: Record<Language, Record<string, any>> = {
     res_1_desc: "「換了 NE: WASH 之後，背部的粉刺真的減少了許多。以前使用連鎖品牌的洗髮水，沖洗後總是有層油感，現在終於感到清爽乾淨。」",
     res_2_title: "額頭粉刺消失，髮際線平滑",
     res_2_desc: "「一直以為額頭長痘是因為卸妝不徹底，後來才發現是護髮素阻塞毛孔。NE: SMOOTH 足夠滋潤但完全不會悶住皮膚。」",
-
-    // Products
-    prod_title: "全系列產品",
-    prod_subtitle: "The Collection",
-    prod_wash_desc: "溫和清潔，不含 SLS/SLES。泡沫細緻，有效帶走油脂而不破壞頭皮屏障。",
-    prod_wash_feat: ["0% 致痘成分", "100% 無油無味", "pH 5.5 弱酸性"],
-    prod_smooth_desc: "革命性無油配方。提供充足順滑度，卻不會在背部或面部殘留致痘薄膜。",
-    prod_smooth_feat: ["不含礦物油/植物油", "無香料配方", "易沖洗不殘留"],
-    prod_essence_desc: "免沖洗修護。針對髮尾乾燥，瞬間吸收。即使觸碰到臉頰也不會引發粉刺。",
-    prod_essence_feat: ["修復毛躁", "完全水基配方", "零油零香"],
 
     // Education Teaser
     edu_badge: "皮膚科學",
@@ -102,25 +107,6 @@ const translations: Record<Language, Record<string, any>> = {
     faq_q4: "這系列有香味嗎？",
     faq_a4: "全系列均為無香料 (Fragrance-free)。香料與精油是常見的致痘源，因此我們堅持「零香料、零精油、零油分」，給予皮膚最純粹的護理。",
 
-    // Cart & Checkout
-    cart_empty: "您的購物車是空的",
-    cart_shop: "去逛逛產品",
-    cart_subtotal: "小計",
-    cart_total: "總計",
-    cart_shipping_note: "運費與稅費將在結帳時計算",
-    cart_checkout: "前往結帳",
-    cart_remove: "移除",
-    checkout_secure: "安全結帳",
-    checkout_shipping: "配送資訊",
-    checkout_name: "全名",
-    checkout_phone: "電話",
-    checkout_address: "地址",
-    checkout_district: "地區",
-    checkout_payment: "付款方式",
-    checkout_pay_btn: "使用 Yedpay 付款",
-    checkout_back: "返回",
-    checkout_continue: "繼續前往付款",
-
     // Footer
     footer_desc: "針對不致痘生活的研發工作室。香港製造。停止致痘源，重啟肌膚健康。",
     footer_series: "目前系列",
@@ -134,7 +120,6 @@ const translations: Record<Language, Record<string, any>> = {
     nav_education: "Skin Wiki",
     nav_products: "The Collection",
     nav_advisor: "Ingredient Lab",
-    nav_cart: "Cart",
 
     // Hero
     hero_badge: "Formulated in HK · Medical Grade Standards",
@@ -144,25 +129,20 @@ const translations: Record<Language, Record<string, any>> = {
     hero_focus: "Skin Health First",
     hero_areas: "Face · Hairline · Back",
 
-    // Problem & Solution
-    prob_badge: "The Hidden Trigger",
-    prob_title: "Why does acne keep returning\non your face and back?",
-    prob_desc: "It’s not just hormones or wrong skincare. The shampoo you use daily might be forming an 'invisible film' on these vulnerable areas.",
-    prob_path_title: "The Runoff Path",
-    prob_path_1_title: "Target Area 1: Forehead & Temples",
-    prob_path_1_desc: "During rinsing, foam flows along the hairline, affecting the forehead and cheeks. This is a common blind spot for unexplained texture.",
-    prob_path_2_title: "The Invisible Residue",
-    prob_path_2_desc: "Commercial shampoos use heavy oils and polymers for 'smoothness'. They stick to your skin like plastic wrap, making them extremely hard to rinse off.",
-    prob_path_3_title: "Clogged Pores",
-    prob_path_3_desc: "This invisible film seals your pores. Even facial cleansers might fail to remove these heavy hair ingredients, leading to chronic breakouts.",
-    sol_title: "The NE: PLANET Solution",
-    sol_subtitle: "Precision formula for acne-prone skin.",
-    sol_1_title: "Hydrophilic Zero-Residue Formula",
-    sol_1_desc: "We use small-molecule, water-soluble hydrators. Foam rinses away completely, allowing your pores to breathe again.",
-    sol_2_title: "Crafted in Hong Kong",
-    sol_2_desc: "Adjusted for high humidity. We avoid the 'heavy oil' standards of Western products, giving hair what it needs without weighing down your skin.",
-    sol_3_title: "Skincare-Grade Experience",
-    sol_3_desc: "Say goodbye to hairline bumps and 'shampoo acne'. It’s more than washing hair; it’s twice-daily skincare for your scalp and face.",
+    // Products
+    prod_title: "The Collection",
+    prod_subtitle: "Dermatologically Safe",
+    prod_featured_bundle: "Featured Bundle",
+    prod_bundle_name: "NE: PLANET Essential Skin-Safe Kit",
+    prod_bundle_desc: "Includes Shampoo, Conditioner, and Hair Lotion. The most comprehensive solution to eliminate triggers and reset your skin health.",
+    prod_buy_now: "Buy Now",
+    prod_bundle_price: "HK$ 370",
+    prod_wash_desc: "Gentle cleansing without SLS/SLES. Fine foam effectively removes oil without stripping the scalp barrier.",
+    prod_wash_feat: ["0% Comedogenic", "100% Oil & Fragrance Free", "pH 5.5 Balanced"],
+    prod_smooth_desc: "Revolutionary oil-free formula. Provides ample smoothness without forming a breakout film on your body.",
+    prod_smooth_feat: ["No Mineral/Plant Oils", "Fragrance-Free", "Easy Rinse"],
+    prod_essence_desc: "Leave-in repair. Targets dry ends with instant absorption. Safe even if it touches your cheeks.",
+    prod_essence_feat: ["Frizz Control", "100% Water-Based", "Zero Oil & Fragrance"],
 
     // Results
     res_badge: "Proven Results",
@@ -173,25 +153,6 @@ const translations: Record<Language, Record<string, any>> = {
     res_2_title: "Forehead Texture Cleared",
     res_2_desc: "'I thought my breakouts were from makeup residue, but it was my conditioner clogging my pores. NE: SMOOTH is hydrating yet weightless.'",
 
-    // Products
-    prod_title: "The Collection",
-    prod_subtitle: "Dermatologically Safe",
-    prod_wash_desc: "Gentle cleansing without SLS/SLES. Fine foam effectively removes oil without stripping the scalp barrier.",
-    prod_wash_feat: ["0% Comedogenic", "100% Oil & Fragrance Free", "pH 5.5 Balanced"],
-    prod_smooth_desc: "Revolutionary oil-free formula. Provides ample smoothness without forming a breakout film on your body.",
-    prod_smooth_feat: ["No Mineral/Plant Oils", "Fragrance-Free", "Easy Rinse"],
-    prod_essence_desc: "Leave-in repair. Targets dry ends with instant absorption. Safe even if it touches your cheeks.",
-    prod_essence_feat: ["Frizz Control", "100% Water-Based", "Zero Oil & Fragrance"],
-
-    // Education Teaser
-    edu_badge: "Skin Science",
-    edu_title: "'Why does acne persist even with\nthe best skincare routine?'",
-    edu_desc: "Many ignore the impact of shampoo runoff. Long-term use of oil-heavy products can lead to persistent 'shampoo acne' and clogged pores.",
-    edu_cta: "Read Full Article: Debunking Acne Myths",
-    edu_list_1: "How shampoo triggers forehead acne",
-    edu_list_2: "Identifying hidden triggers",
-    edu_list_3: "Survival Guide: Choosing the right products",
-
     // Advisor
     adv_badge: "Offline Lab Engine",
     adv_title: "Are your daily products safe?",
@@ -201,36 +162,6 @@ const translations: Record<Language, Record<string, any>> = {
     adv_report_title: "Analysis Report",
     adv_report_badge: "Local Diagnosis",
     adv_cta: "Browse NE: PLANET Safety Series",
-
-    // FAQ
-    faq_title: "FAQ",
-    faq_q1: "Will it be drying without comedogenic oils?",
-    faq_a1: "No. We use amino acid surfactants and water-soluble humectants like B5. Your hair stays hydrated without the 'greasy' fake-smooth feeling.",
-    faq_q2: "Is it safe for color-treated hair?",
-    faq_a2: "Yes. NE: PLANET is pH 5.5 balanced and SLS-free, which is actually gentler and helps preserve your hair color longer.",
-    faq_q3: "Why does shampoo cause back acne?",
-    faq_a3: "Traditional products use 'Cationic Polymers' and 'Mineral Oils' that form a film on your skin. NE: WASH ensures no residue is left behind.",
-    faq_q4: "Is it scented?",
-    faq_a4: "No. Our entire range is Fragrance-Free. Fragrances and essential oils are major triggers, so we stick to a zero-oil, zero-scent policy.",
-
-    // Cart & Checkout
-    cart_empty: "Your cart is empty",
-    cart_shop: "Shop Our Products",
-    cart_subtotal: "Subtotal",
-    cart_total: "Total",
-    cart_shipping_note: "Shipping calculated at checkout",
-    cart_checkout: "Checkout",
-    cart_remove: "Remove",
-    checkout_secure: "Secure Checkout",
-    checkout_shipping: "Shipping Information",
-    checkout_name: "Full Name",
-    checkout_phone: "Phone",
-    checkout_address: "Address",
-    checkout_district: "District",
-    checkout_payment: "Payment",
-    checkout_pay_btn: "Pay with Yedpay",
-    checkout_back: "Back",
-    checkout_continue: "Continue to Payment",
 
     // Footer
     footer_desc: "Studio for Non-Comedogenic Living. Crafted in HK. Stop the triggers, reset your skin health.",
