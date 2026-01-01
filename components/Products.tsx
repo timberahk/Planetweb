@@ -19,7 +19,7 @@ const Products: React.FC = () => {
       price: 'HK$ 150',
       volume: '400ml',
       features: t('prod_wash_feat'),
-      stripeLink: 'https://buy.stripe.com/4gM9ATdmGfyfbB40Eiffy0b'
+      stripeLink: 'https://buy.stripe.com/3cIdR92I21HpeNgdr4ffy0d'
     },
     {
       id: 'smooth',
@@ -29,7 +29,7 @@ const Products: React.FC = () => {
       price: 'HK$ 150',
       volume: '400ml',
       features: t('prod_smooth_feat'),
-      stripeLink: 'https://buy.stripe.com/4gM9AT4QabhZgVocn0ffy0a'
+      stripeLink: 'https://buy.stripe.com/28E28r4Qa99R6gK4Uyffy05'
     },
     {
       id: 'essence',
@@ -39,11 +39,11 @@ const Products: React.FC = () => {
       price: 'HK$ 90',
       volume: '200ml',
       features: t('prod_essence_feat'),
-      stripeLink: 'https://buy.stripe.com/aFaeVd3M61HpgVofzcffy09'
+      stripeLink: 'https://buy.stripe.com/8x2fZhgySfyf8oS4Uyffy0f'
     }
   ];
 
-  const bundleStripe = 'https://buy.stripe.com/7sYfZh3M6dq75cGev8ffy08';
+  const bundleStripe = 'https://buy.stripe.com/dRm6oH6Yi1Hp0WqaeSffy0c';
 
   return (
     <section id="products" className="py-24 bg-gray-50">
